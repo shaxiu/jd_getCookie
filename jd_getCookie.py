@@ -3,19 +3,6 @@ import time
 import json
 import pyperclip
 
-
-def find_and_paste(cookie):
-    # 文件路径
-    for item in cookie.split('; '):
-        if 'pt_pin' in item:
-            pt_pin = item
-        if 'pt_key' in item:
-            pt_key = item
-    jd_cookie = pt_pin+';'+pt_key+';'
-    pyperclip.copy(jd_cookie)
-    return jd_cookie
-
-
 def main():
     option = webdriver.ChromeOptions()
     option.add_experimental_option(
